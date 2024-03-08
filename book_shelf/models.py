@@ -10,6 +10,9 @@ class Author(models.Model):
 
     def __str__(self):
         return self.name
+    
+    def get_books(self):
+        return Book.objects.filter(author=self)
 
 
 class Book(models.Model):
